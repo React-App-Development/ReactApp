@@ -3,6 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+	componentDidMount(){
+		fetch('/users', {method: 'POST'})
+		.then((response) => {
+			console.log(response);
+			return response.json();
+		  })
+		  .then(function(myJson) {
+			console.log(myJson);
+		  });
+	}
   render() {
     return (
       <div className="App">
